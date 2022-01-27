@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title>yChat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://images.unsplash.com/photo-1476820865390-c52aeebb9891?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  margin: 0px;
+}
+</style>
+<body>
+  {% block messages %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-dark" role="alert">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+{% endblock %}
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    yChat
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top text-center">yChat</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">fill in your name to begin</p>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form" action="" method="POST">
+            <input type="text" name="inputName" id="inputName" placeholder="Your Name"/>
+            <button type="submit" class="btn btn-success btn-sm">Submit</button>
+          </form>
+        </div>
+      </div>
+    
+  </div>
+  
+</div>
+
+</body>
+</html>
